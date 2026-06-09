@@ -1,0 +1,412 @@
+@charset "utf-8";
+
+/* ==========================================================================
+   メインビジュアル (MV)
+   ========================================================================== */
+
+.mv {
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(30, 41, 59, 0.4)),
+    url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80") center / cover no-repeat;
+  color: #fff;
+}
+
+.mv-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  margin-top: 60px; /* ヘッダー分のマージン */
+}
+
+/* タイポグラフィとテキストアニメーションのベース */
+.mv-text-group {
+  margin-bottom: 40px;
+}
+
+.h2-main-left,
+.h2-main-right {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.h2-main-right {
+  color: var(--color-secondary);
+  margin-top: 10px;
+}
+
+
+/* ==========================================================================
+   企業理念 (Philosophy)
+   ========================================================================== */
+
+.philosophy {
+  background-color: #fff;
+}
+
+.philosophy .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.img-box {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* 画像比率固定 & 滑らかなホバーズーム */
+.flex-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.h2-title {
+  font-size: 2.5rem;
+  color: var(--color-dark);
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.p-philosophy {
+  line-height: 2;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   事業紹介 (Business)
+   ========================================================================== */
+
+.business {
+  background: var(--color-light);
+}
+
+.grid-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.business-card {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+/* 各背景にフリーの美しいテクノロジー系写真を指定 */
+.web-making { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80"); }
+.system { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80"); }
+.cloud { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80"); }
+.support { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"); }
+
+.card-inner {
+  padding: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  transition: var(--transition-smooth);
+}
+
+.card-inner h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--color-secondary);
+}
+
+.card-inner p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  transform: translateY(10px);
+  transition: var(--transition-smooth);
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 153, 204, 0.25);
+}
+
+.business-card:hover .card-inner {
+  background: rgba(0, 153, 204, 0.4);
+}
+
+.business-card:hover .card-inner p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   サステナビリティ (Sustainability)
+   ========================================================================== */
+
+.sustainability {
+  position: relative;
+  padding: 0;
+  height: 550px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sustainability-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.sustainability-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.55); /* 暗く重ねてテキストの可読性向上 */
+}
+
+.sustainability-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sustainability-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.sustainability-text-wrap {
+  margin-bottom: 40px;
+}
+
+.sustainability-h2-ltop,
+.sustainability-h2-rbottom {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+
+.sustainability-h2-rbottom {
+  color: var(--color-secondary);
+  margin-top: 5px;
+}
+
+/* ==========================================================================
+   実績スライダー (Pick Up)
+   ========================================================================== */
+
+.pick-up-section {
+  background: var(--color-light);
+  overflow: hidden;
+}
+
+.pick-up-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contents-window {
+  width: 100%;
+  max-width: 1050px; /* 3枚表示 = 330px * 3 + ギャップ */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.contents-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contents {
+  width: 330px;
+  height: 330px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  background-size: cover;
+  background-position: center;
+}
+
+/* スライダー個別デザイン */
+.bg-slide1 { background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80"); }
+.bg-slide2 { background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url("https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=500&q=80"); }
+.bg-slide3 { background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url("https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=500&q=80"); }
+.bg-slide4 { background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=80"); }
+.bg-slide5 { background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80"); }
+
+.contents-inner {
+  padding: 30px 24px;
+  color: #fff;
+  z-index: 2;
+}
+
+.category {
+  font-size: 0.8rem;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.h3-pick-up {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ナビボタン */
+.prev-btn, .next-btn {
+  background: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   レスポンシブデザイン (Mobile & Tablet)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .philosophy .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .img-box, .text-area {
+    width: 100%;
+  }
+  .flex-img {
+    height: 400px;
+  }
+  .footer-nav-main-ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 70px 0;
+  }
+
+  /* ヘッダー */
+  .header-inner {
+    padding: 15px 20px;
+  }
+  .nav, .contact-btn {
+    display: none; /* スマホ用メニューは本来ハンバーガーメニュー等に移行 */
+  }
+
+  /* MV */
+  .mv {
+    height: 80vh;
+  }
+  .h2-main-left, .h2-main-right {
+    font-size: 2.2rem;
+  }
+
+  /* グリッドレイアウト */
+  .grid-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* コンタクト & 採用 */
+  .flex-box {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contact-card-box, .recruit-card-box {
+    width: 100%;
+    padding: 40px 24px;
+  }
+
+  /* フッター */
+  .footer-nav-main-ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav-main-ul {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* ==========================================================================
+   キーフレームアニメーション
+   ========================================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

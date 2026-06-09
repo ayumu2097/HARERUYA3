@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+body {
+	background-color: #fff;
+}
+
+.philosophy-mv {
+	width: auto;
+	height: 90vh;
+	align-items: center;
+	background: url("../img/aozora.jpg")no-repeat; 
+	clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+	background-size: cover;
+	background-position: center; 
+	text-align: center;
+	position: relative;
+}
+
+.philosophy-mv-text {
+	position: absolute;
+	font-size: clamp(2.2rem, 5vw, 4.5rem);
+	text-shadow: 2px 2px 4px #333;
+}
+
+.philosophy-mv-text h2 {
+	color: gray;
+}
+
+.philosophy-mv-text h3 {
+	color: orange;
+}
+
+.philosophy-text-area {
+	font-size: 1.4rem;
+	font-weight: bold;
+	text-align: center;
+	line-height: 3;
+	font-family: "Shippori Mincho B1", serif;
+}
+
+.try-mv {
+	width: auto;
+	height: 90vh;
+	align-items: center;
+	background: url("../img/aozora.jpg")no-repeat; 
+	clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+	background-size: cover;
+	background-position: center; 
+	text-align: center;
+	position: relative;
+}
+
+.title-h2 {
+	text-align: center;
+	font-size: 3rem;
+	border-bottom: 1px solid #000;
+	margin: 0 auto;
+	max-width: 15%;
+	font-family: "Shippori Mincho B1", serif;
+}
+
+.messeage-container-inner {
+	
+}
+
+.img-box {
+	width: 25%;
+	height: auto;
+	object-fit: cover;
+	display: block;
+	border-radius: 10px;
+}
+
+.text-area{
+	padding-left: 50px;
+	margin-left: 50px;
+	line-height: 1.5;
+	font-family: "Shippori Mincho B1", serif;
+	font-size: 1.2rem;
+	font-weight: 400;
+}
+
+.text-area-h3 {
+	padding: 20px 0;
+	font-size: 2rem;
+	font-family: "Shippori Mincho B1", serif;
+	text-align: center;
+}
+
+.position-President {
+	display: flex;
+	justify-content: flex-end;
+	gap: 40px;
+	align-items: center;
+	padding: 20px 40px 0 0;
+	font-family: "Zen Antique", serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.President-Name {
+	font-size: 2rem;
+}
+
+.position {
+	font-size: 1.5rem;
+}
+
+.message-h3 {
+	text-align: center;
+	color: red;
+	font-size: 1.8rem;
+}
+
+.about-table {
+	margin: auto;
+	text-align: left;
+	padding-top: 20px;
+}
+
+.about-td {
+	padding-left: 80px;
+	padding-top: 20px;
+	padding-bottom: 20px
+}
+
+.about-td {
+	padding-left: 80px;
+	padding-top: 20px;
+	padding-bottom: 20px
+}
+
+.about-th {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 40px;
+}
+
+.shippori-mincho-b1-regular {
+  font-family: "Shippori Mincho B1", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#company,#philosophy,#message,#profile,#history {
+	scroll-margin-top: 100px;
+}
+
+
